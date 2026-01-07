@@ -30,7 +30,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'flazz/vim-colorschemes'
 Plug 'jiangmiao/auto-pairs'
+Plug 'EdenEast/nightfox.nvim'
 
 call plug#end()
 
-colorscheme candy
+colorscheme carbonfox
+let g:airline_theme='atomic'

@@ -1,84 +1,71 @@
 {
     "position": "top",
-    "margin-top": 3,
+    "margin-top":2,
     "reload_style_on_change": true,
-    "modules-left": ["hyprland/workspaces","custom/uptime"],
-    "modules-center": ["custom/music","hyprland/window"],
-    "modules-right": ["clock","bluetooth","network","wireplumber","battery"],
-    
+    "modules-left": ["clock","custom/music"],
+    "modules-center": ["hyprland/workspaces","hyprland/window"],
+    "modules-right": ["bluetooth","network","wireplumber","battery"],
+
     "hyprland/workspaces": {
-        "format": "{name}:{icon}",
-        "format-icons": {
-            "active": " ",
-            "default": " "
-        }
+        "format": "{name}"
     },
-    "hyprland/window": {
-        "separate-outputs": true
-    },
-    "custom/uptime": {
-        "format": "{}",
-        "format-icon": [""],
-        "tooltip": false,
-        "interval": 100,
-        "exec": "$HOME/.config/waybar/uptime.sh"
+    "hyprland/window":{
+        "separate-outputs":true,
+        "max-length":30
     },
     "bluetooth": {
-    "format": "󰂲",
-    "format-on": "{icon}",
-    "format-off": "{icon}", 
-    "format-connected":"{icon}",
-    "format-icons":{
-        "on":"󰂯",
-        "off": "󰂲",
-        "connected": "󰂱"
+        "format": "󰂲",
+        "format-on": "{icon}",
+        "format-off": "{icon}",
+        "format-connected": "{icon}",
+        "format-icons": {
+            "on":"",
+            "off":"󰂲",
+            "connected":"󰂱"
         },
-    "on-click": "blueman-manager",
-    "tooltip-format-connected":"{device_enumerate}"
-  },
-  "custom/music": {
-    "format": "  {}",
-    "escape": true,
-    "interval": 5,
-    "tooltip": false,
-    "exec": "playerctl metadata --format='{{ artist }} - {{ title }}'",
-    "on-click": "playerctl play-pause",
-    "max-length": 50
-  },
-  "clock": {
-    "timezone": "Asia/Kolkata",
-    "tooltip": false,
-    "format": "{:%H:%M:%S  -  %A, %d}",
-    "interval": 1
-  },
-  "network": {
-    "format-wifi": "󰤢",
-    "format-ethernet": "󰈀 ",
-    "format-disconnected": "󰤠 ",
-    "interval": 5,
-    "tooltip-format": "{essid} ({signalStrength}%)",
-    "on-click": "nm-connection-editor"
- },
- "battery": {
-        "interval":2,
+        "on-click":"blueman-manager"
+    },
+    "custom/music": {
+        "format": "󰎆 {}",
+        "escape": true,
+        "interval":1,
+        "tooltip":false,
+        "exec":"playerctl metadata --format='{{ artist }} - {{ title }}'",
+        "on-click":"playerctl play-pause",
+        "max-length":"30"
+    },
+    "clock": {
+        "timezone":"Asia/Kolkata",
+        "tooltip":false,
+        "format":"{:%H:%M - %A, %d}",
+        "interval":60
+    },
+    "network":{
+        "format-wifi":"󰤨",
+        "format-ethernet":"󰈀",
+        "foramt-disconnected":"󰤭",
+        "interval":1,
+        "tooltip-format":"{essid} ({signalStrength}%)",
+        "on-click":"nm-connection-editor"
+    },
+    "battery":{
+        "interval":1,
         "states": {
-            // "good": 95,
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}  {capacity}%",
-        "format-full": "{icon}  {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
+        "format": "{icon}",
+        "format-full": "{icon}",
+        "format-charging": "",
+        "format-plugged": "",
         "format-alt": "{icon} {time}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-  },
-  "wireplumber": {
-    "format": "{icon} {volume}%",
-    "format-muted": "",
-    "format-icons": ["", "", ""],
-    "on-click": "pwvucontrol"
-  }
+        "format-icons": ["󰂎", "󰁼", "󰁾", "󰂀", "󰁹"]
+    },
+    "wireplumber":{
+        "format":"{icon}",
+        "format-muted":"󰝟",
+        "format-icons":["󰕿","󰖀","󰕾"],
+        "tooltip-format":"{node_name} {volume}%",
+        "on-click":"wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    }
 }
