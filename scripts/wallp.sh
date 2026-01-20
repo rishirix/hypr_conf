@@ -1,5 +1,9 @@
 #!/bin/bash
-hyprctl hyprpaper reload , $1
+hyprctl hyprpaper wallpaper ','"~/$1"','
 
-echo "preload=$HOME/$1
-wallpaper= ,$HOME/$1" > $HOME/.config/hypr/hyprpaper.conf
+echo "wallpaper{
+    monitor=
+    path=$1
+    fit_mode=
+}
+splash=false" > $HOME/.config/hypr/hyprpaper.conf
