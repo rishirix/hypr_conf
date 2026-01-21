@@ -1,6 +1,7 @@
 {
     "position": "top",
     "margin-top":2,
+    "margin-bottom":2,
     "reload_style_on_change": true,
     "modules-left": ["clock","custom/music"],
     "modules-center": ["hyprland/workspaces","hyprland/window"],
@@ -32,7 +33,7 @@
         "tooltip":false,
         "exec":"playerctl metadata --format='{{ artist }} - {{ title }}'",
         "on-click":"playerctl play-pause",
-        "max-length":"30"
+        "max-length":"20"
     },
     "clock": {
         "timezone":"Asia/Kolkata",
@@ -43,7 +44,7 @@
     "network":{
         "format-wifi":"󰤨",
         "format-ethernet":"󰈀",
-        "foramt-disconnected":"󰤭",
+        "format-disconnected":"󰤭",
         "interval":1,
         "tooltip-format":"{essid} ({signalStrength}%)",
         "on-click":"nm-connection-editor"
@@ -59,13 +60,15 @@
         "format-charging": "",
         "format-plugged": "",
         "format-alt": "{icon} {time}",
-        "format-icons": ["󰂎", "󰁼", "󰁾", "󰂀", "󰁹"]
+        "format-icons": ["󰂎", "󰁼", "󰁾", "󰂀", "󰁹"],
+        "tooltip-format":"{capacity}% - {timeTo}"
     },
     "wireplumber":{
         "format":"{icon}",
         "format-muted":"󰝟",
         "format-icons":["󰕿","󰖀","󰕾"],
         "tooltip-format":"{node_name} {volume}%",
-        "on-click":"wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        "on-click":"wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "pavucontrol"
     }
 }

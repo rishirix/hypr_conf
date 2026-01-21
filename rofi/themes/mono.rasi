@@ -2,13 +2,13 @@
 /* Author: Newman Sanchez (https://github.com/newmanls) */
 
 * {
-    font:   "Inter 9";
+    font:   "SF Pro Text 12";
 
-    bg0:     #000000;
+    bg0:     #1F242A;
     bg1:     #101010ff;
     fg0:     #ffffff;
 
-    accent-color:     #121212ff;
+    accent-color:     #eee;
     urgent-color:     #EBCB8B;
 
     background-color:   transparent;
@@ -79,7 +79,7 @@ element alternate active {
 }
 
 element selected {
-    text-color: @fg0;
+    text-color: @bg0;
 }
 
 element selected normal, element selected active {
