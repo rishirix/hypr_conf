@@ -34,5 +34,5 @@ Plug 'EdenEast/nightfox.nvim'
 
 call plug#end()
 
-colorscheme carbonfox
-let g:airline_theme='atomic'
+colorscheme darkdevel
+let g:airline_theme='jet'
