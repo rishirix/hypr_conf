@@ -6,7 +6,7 @@ compinit
 promptinit
 
 # Prompt
-PROMPT='%F{cyan}%n@%m%f:%F{yellow}%~%f %# '
+PROMPT='%F{blue}%~ %F{red}> '
 
 # ---------- HISTORY ----------
 HISTFILE=~/.zsh_history
@@ -32,10 +32,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # zsh-completions
 fpath+=(/usr/share/zsh/plugins/zsh-completions/src)
 autoload -U compinit && compinit
-
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
 
 # ---------- ALIASES ----------
 source ~/.aliases
